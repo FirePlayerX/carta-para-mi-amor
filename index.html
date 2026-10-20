@@ -26,7 +26,7 @@
     .music-button:hover{box-shadow:0 7px 16px rgba(72,120,144,.12)}
     .song{max-width:440px;margin:24px auto 0;text-align:left}
     .song-label{font:600 11px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 4px}
-    .song-frame{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:14px;box-shadow:0 8px 24px rgba(59,103,126,.14);background:#16212a}
+    .song-audio{display:block;width:100%;height:54px;border-radius:14px;box-shadow:0 8px 24px rgba(59,103,126,.14)}
     .letter{display:none;text-align:left;max-width:520px;margin:40px auto 0;padding-top:32px;border-top:1px solid #d8eaf0;animation:appear .7s ease both}
     .letter.open{display:block}
     .letter p{font-size:18px;line-height:1.85;margin:0 0 18px}
@@ -45,31 +45,8 @@
   <main class="wrap">
     <article class="card">
       <div class="eyebrow">Un mensaje desde nuestro rincón polar</div>
-      <div class="ornament" aria-hidden="true">
-        <svg class="penguin-scene" viewBox="0 0 480 290" role="img" aria-label="Dos pingüinitos enamorados se abrazan frente a un iglú">
-          <ellipse cx="240" cy="263" rx="224" ry="17" fill="#c9eaf2" opacity=".72"/>
-          <path d="M292 151a91 91 0 0 1 182 0v81H292z" fill="#f8fdff" stroke="#c6e8ef" stroke-width="7"/>
-          <path d="M292 177h182M338 72v157M428 72v157M299 132h168M298 205h174" fill="none" stroke="#b9e5ee" stroke-width="6"/>
-          <path d="M416 231v-39a30 30 0 0 1 60 0v39" fill="#83c5d2" stroke="#d5f0f4" stroke-width="7"/>
-          <path d="M20 237q48-23 95-6 46-30 91-4 44-26 91-2 60-30 163 9v39H20z" fill="#fff" opacity=".93"/>
-          <path d="M34 253q65-24 115-1m221-8q44-17 80 4" fill="none" stroke="#dceff4" stroke-width="9" stroke-linecap="round"/>
-          <g fill="#fff" opacity=".85"><path d="m97 48 4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/><path d="m388 30 3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><circle cx="331" cy="52" r="3"/><circle cx="58" cy="117" r="4"/></g>
-          <path d="M218 49c-13-20-43-8-38 15 3 15 22 27 38 39 16-12 35-24 38-39 5-23-25-35-38-15z" fill="#ef725f"/>
-          <g transform="translate(124 105) rotate(-9 76 78)">
-            <ellipse cx="30" cy="111" rx="17" ry="42" fill="#26303f" transform="rotate(31 30 111)"/><ellipse cx="76" cy="104" rx="49" ry="67" fill="#26303f"/><ellipse cx="81" cy="115" rx="31" ry="49" fill="#fbfdff"/><ellipse cx="75" cy="52" rx="39" ry="40" fill="#26303f"/>
-            <ellipse cx="65" cy="54" rx="8" ry="10" fill="#fff"/><ellipse cx="88" cy="52" rx="8" ry="10" fill="#fff"/><circle cx="68" cy="56" r="4" fill="#26303f"/><circle cx="90" cy="54" r="4" fill="#26303f"/>
-            <path d="M78 65q10-3 17 4-9 10-18 1z" fill="#f28b45"/><ellipse cx="54" cy="67" rx="6" ry="4" fill="#f6a1b4"/><ellipse cx="101" cy="64" rx="6" ry="4" fill="#f6a1b4"/>
-            <path d="M48 91q34 13 63-1l-3 13q-30 15-58 0z" fill="#73c4d1"/><path d="m93 101 16 7-6 25-13-4z" fill="#73c4d1"/><ellipse cx="56" cy="165" rx="18" ry="8" fill="#f28b45"/><ellipse cx="98" cy="164" rx="18" ry="8" fill="#f28b45"/>
-          </g>
-          <g transform="translate(218 99) rotate(8 76 78)">
-            <ellipse cx="30" cy="111" rx="17" ry="42" fill="#26303f" transform="rotate(31 30 111)"/><ellipse cx="76" cy="104" rx="49" ry="67" fill="#26303f"/><ellipse cx="71" cy="115" rx="31" ry="49" fill="#fbfdff"/><ellipse cx="75" cy="52" rx="39" ry="40" fill="#26303f"/>
-            <ellipse cx="64" cy="52" rx="8" ry="10" fill="#fff"/><ellipse cx="87" cy="54" rx="8" ry="10" fill="#fff"/><path d="M61 53q3-6 7 0" fill="none" stroke="#26303f" stroke-width="3" stroke-linecap="round"/><circle cx="89" cy="56" r="4" fill="#26303f"/>
-            <path d="M52 65q-10-3-17 4 9 10 18 1z" fill="#f28b45"/><ellipse cx="48" cy="64" rx="6" ry="4" fill="#f6a1b4"/><ellipse cx="99" cy="67" rx="6" ry="4" fill="#f6a1b4"/>
-            <path d="M47 92q34 13 63-1l-3 13q-30 15-58 0z" fill="#e98faa"/><path d="m91 101 16 7-6 25-13-4z" fill="#e98faa"/><ellipse cx="56" cy="165" rx="18" ry="8" fill="#f28b45"/><ellipse cx="98" cy="164" rx="18" ry="8" fill="#f28b45"/>
-          </g>
-          <path d="M220 136q-34 22-43 47m100-44q27 10 34 30" fill="none" stroke="#26303f" stroke-width="15" stroke-linecap="round"/>
-          <path d="M227 122c-7-10-22-3-20 8 2 8 12 14 20 20 8-6 18-12 20-20 2-11-13-18-20-8z" fill="#ef725f"/>
-        </svg>
+      <div class="ornament">
+        <img class="penguin-scene" src="assets/pinguinos-enamorados.png" alt="Dos pingüinitos enamorados se abrazan frente a un iglú">
       </div>
       <h1>Para ti,<br>mi punguinita</h1>
       <p class="subtitle">Mi pequeño rincón cálido en medio del invierno.</p>
@@ -78,7 +55,7 @@
       </div>
       <div class="song">
         <p class="song-label">Nuestra canción · LATIN MAFIA</p>
-        <iframe class="song-frame" src="https://www.youtube-nocookie.com/embed/j3POFK8nR5w?rel=0" title="Te Estoy Correteando — LATIN MAFIA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        <audio class="song-audio" controls preload="none" aria-label="Te Estoy Correteando, de LATIN MAFIA"><source src="assets/te-estoy-correteando.mp3" type="audio/mpeg">Tu navegador no puede reproducir audio. <a href="assets/te-estoy-correteando.mp3">Descargar la canción</a></audio>
       </div>
       <section class="letter" id="letter" aria-label="Carta de amor">
         <p class="salute">Erika, mi pinguinita querida:</p>
