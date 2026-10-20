@@ -3,31 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fff8f5">
-  <meta name="description" content="Una carta hecha con amor, para alguien muy especial.">
-  <title>Para ti, mi amor</title>
+  <meta name="theme-color" content="#eaf7fc">
+  <meta name="description" content="Una carta polar, tierna y llena de amor para Erika.">
+  <title>Para Erika, mi pinguinita</title>
   <style>
-    :root{--ink:#463b40;--rose:#c96f7e;--deep:#9f4e61;--paper:#fffdfb;--muted:#927e83}
+    :root{--ink:#263b49;--rose:#e78da8;--deep:#52798d;--paper:#fbfeff;--muted:#718a96}
     *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;color:var(--ink);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at 12% 14%,#ffe5e8 0,transparent 32%),radial-gradient(ellipse at 88% 80%,#f9e6d7 0,transparent 30%),#fff8f5;overflow-x:hidden}
+    body{margin:0;min-height:100vh;color:var(--ink);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at 12% 8%,rgba(151,229,218,.46) 0,transparent 32%),radial-gradient(ellipse at 88% 10%,rgba(208,199,255,.48) 0,transparent 34%),radial-gradient(ellipse at 50% 100%,#dceff7 0,transparent 56%),linear-gradient(180deg,#e9f8fc,#fbfdff 72%);overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.48;background-image:radial-gradient(2px 2px at 25px 30px,#fff 98%,transparent),radial-gradient(2px 2px at 95px 85px,#fff 98%,transparent),radial-gradient(1.5px 1.5px at 60px 120px,#fff 98%,transparent);background-size:150px 160px;z-index:0}
     .wrap{min-height:100vh;display:grid;place-items:center;padding:48px 20px;position:relative}
-    .glow{position:fixed;width:340px;height:340px;border-radius:50%;filter:blur(70px);opacity:.28;pointer-events:none;background:#f5b5bf;top:-170px;right:8%}
-    .card{position:relative;width:min(100%,720px);padding:clamp(32px,7vw,72px);background:rgba(255,253,251,.88);border:1px solid rgba(201,111,126,.22);border-radius:8px;box-shadow:0 24px 80px rgba(116,67,78,.12);text-align:center;backdrop-filter:blur(8px)}
+    .glow{position:fixed;width:370px;height:370px;border-radius:50%;filter:blur(76px);opacity:.34;pointer-events:none;background:#a8e4dc;top:-190px;right:8%}
+    .card{position:relative;z-index:1;width:min(100%,720px);padding:clamp(32px,7vw,72px);background:rgba(251,254,255,.86);border:1px solid rgba(104,164,188,.3);border-radius:18px;box-shadow:0 24px 80px rgba(59,103,126,.15);text-align:center;backdrop-filter:blur(8px)}
     .eyebrow{font:600 11px/1.4 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.25em;color:var(--rose)}
-    .ornament{font-size:25px;color:var(--rose);margin:17px 0 10px}
+    .ornament{margin:15px 0 10px;display:flex;justify-content:center;filter:drop-shadow(0 8px 10px rgba(60,98,119,.13))}
+    .penguin{width:96px;height:108px;overflow:visible}
     h1{font-size:clamp(38px,8vw,66px);line-height:1.03;font-weight:400;letter-spacing:-.04em;margin:0 0 18px}
     .subtitle{font-size:18px;color:var(--muted);font-style:italic;margin:0 auto 35px;max-width:460px;line-height:1.6}
-    button{font:600 13px system-ui,sans-serif;letter-spacing:.04em;color:white;background:var(--deep);border:0;border-radius:999px;padding:15px 23px;cursor:pointer;box-shadow:0 8px 20px rgba(159,78,97,.2);transition:transform .2s,box-shadow .2s}
-    button:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(159,78,97,.27)}
-    button:focus-visible{outline:3px solid #e8a2ad;outline-offset:4px}
-    .music-button{background:#f6e5e7;color:var(--deep);box-shadow:none}
-    .music-button:hover{box-shadow:0 7px 16px rgba(159,78,97,.12)}
-    .letter{display:none;text-align:left;max-width:520px;margin:40px auto 0;padding-top:32px;border-top:1px solid #f0d9dc;animation:appear .7s ease both}
+    button{font:600 13px system-ui,sans-serif;letter-spacing:.04em;color:white;background:var(--deep);border:0;border-radius:999px;padding:15px 23px;cursor:pointer;box-shadow:0 8px 20px rgba(72,120,144,.2);transition:transform .2s,box-shadow .2s}
+    button:hover{transform:translateY(-2px);box-shadow:0 12px 25px rgba(72,120,144,.27)}
+    button:focus-visible{outline:3px solid #eaa5b8;outline-offset:4px}
+    .music-button{background:#e8f4f8;color:var(--deep);box-shadow:none}
+    .music-button:hover{box-shadow:0 7px 16px rgba(72,120,144,.12)}
+    .letter{display:none;text-align:left;max-width:520px;margin:40px auto 0;padding-top:32px;border-top:1px solid #d8eaf0;animation:appear .7s ease both}
     .letter.open{display:block}
     .letter p{font-size:18px;line-height:1.85;margin:0 0 18px}
     .letter .salute{color:var(--deep);font-size:22px;font-style:italic}
     .signature{padding-top:7px;color:var(--deep);font-size:23px;font-style:italic}
-    .tiny{font:12px system-ui,sans-serif;color:#aa969a;margin-top:32px}
+    .tiny{font:12px system-ui,sans-serif;color:#859ba4;margin-top:32px}
     .heart{position:fixed;bottom:-30px;color:#d47c8a;pointer-events:none;animation:float 6s linear forwards;z-index:2}
     @keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
     @keyframes float{to{transform:translateY(-110vh) rotate(18deg);opacity:0}}
@@ -39,21 +41,43 @@
   <div class="glow" aria-hidden="true"></div>
   <main class="wrap">
     <article class="card">
-      <div class="eyebrow">Una pequeña carta para alguien inmenso</div>
-      <div class="ornament" aria-hidden="true">♥</div>
+      <div class="eyebrow">Un mensaje desde nuestro rincón polar</div>
+      <div class="ornament" aria-hidden="true">
+        <svg class="penguin" viewBox="0 0 100 112" role="img" aria-label="Un pingüinito adorable con bufanda rosa">
+          <ellipse cx="29" cy="65" rx="12" ry="27" fill="#294452" transform="rotate(18 29 65)"/>
+          <ellipse cx="71" cy="65" rx="12" ry="27" fill="#294452" transform="rotate(-18 71 65)"/>
+          <ellipse cx="50" cy="65" rx="31" ry="39" fill="#294452"/>
+          <ellipse cx="50" cy="70" rx="21" ry="28" fill="#f8fdff"/>
+          <ellipse cx="50" cy="36" rx="25" ry="25" fill="#294452"/>
+          <ellipse cx="41" cy="35" rx="5.5" ry="7" fill="#fff"/>
+          <ellipse cx="59" cy="35" rx="5.5" ry="7" fill="#fff"/>
+          <circle cx="42" cy="37" r="2.7" fill="#233843"/>
+          <circle cx="58" cy="37" r="2.7" fill="#233843"/>
+          <path d="M45 45 Q50 51 55 45 Q50 57 45 45" fill="#f4b34e"/>
+          <circle cx="34" cy="45" r="4" fill="#f3a1b6" opacity=".9"/>
+          <circle cx="66" cy="45" r="4" fill="#f3a1b6" opacity=".9"/>
+          <path d="M25 57 Q50 65 75 57 L73 66 Q50 74 27 66 Z" fill="#e98faa"/>
+          <path d="M67 65 L77 83 L67 86 L61 69 Z" fill="#e98faa"/>
+          <ellipse cx="38" cy="103" rx="10" ry="5" fill="#f4b34e"/>
+          <ellipse cx="62" cy="103" rx="10" ry="5" fill="#f4b34e"/>
+          <path d="M20 24 l3 -6 3 6 6 3 -6 3 -3 6 -3 -6 -6 -3z" fill="#fff" opacity=".95"/>
+          <path d="M80 39 l2 -4 2 4 4 2 -4 2 -2 4 -2 -4 -4 -2z" fill="#f5bfd0"/>
+        </svg>
+      </div>
       <h1>Para ti,<br>mi punguinita</h1>
-      <p class="subtitle">Hay cosas que se sienten tan bonito que merecen convertirse en palabras.</p>
+      <p class="subtitle">Mi pequeño rincón cálido en medio del invierno.</p>
       <div class="actions">
         <button id="open" type="button" aria-expanded="false" aria-controls="letter">Abrir mi carta <span aria-hidden="true">♡</span></button>
         <button class="music-button" id="music" type="button" aria-pressed="false">♫ Reproducir música</button>
       </div>
       <section class="letter" id="letter" aria-label="Carta de amor">
-        <p class="salute">Mi querida Erika, mi punguinita,</p>
-        <p>Quería recordarte algo que quizá no te digo lo suficiente: desde que llegaste, mis días tienen un lugar favorito, y ese lugar siempre es donde estás tú.</p>
-        <p>Me encanta tu forma de ser, la manera en que haces especial hasta lo más sencillo y la paz que encuentro cuando estoy contigo. Gracias por cada risa, cada abrazo y cada momento que se vuelve recuerdo bonito a tu lado.</p>
-        <p>No necesito que todo sea perfecto; me basta con seguir compartiendo el camino contigo, elegirte en los días fáciles y también en los complicados, y encontrar nuevas razones para quererte cada día.</p>
-        <p>Ojalá esta carta te abrace un poquito cuando no pueda hacerlo yo. Eres una persona increíble y me siento muy afortunado de tenerte en mi vida.</p>
-        <p class="signature">Con todo mi amor,<br>siempre tuyo ♥</p>
+        <p class="salute">Erika, mi pinguinita querida:</p>
+        <p>Si el mundo amaneciera cubierto de nieve, reconocería tu risa entre los copos. Y si el viento borrara todos los caminos, mi corazón sabría llegar hasta ti.</p>
+        <p>Imagino a dos pingüinitos juntando sus alas frente al mar helado: afuera, el invierno; entre nosotros, una pequeña fogata hecha de abrazos, paciencia y risas.</p>
+        <p>Tu mirada enciende auroras donde antes solo había cielo oscuro. Tu voz vuelve tibia la tarde; tu mano, mi lugar favorito; tu amor, el hogar que llevaría conmigo hasta el último rincón del mundo.</p>
+        <p>Quiero quererte en lo sencillo y en lo inmenso: como el mar abraza la orilla, como la noche cuida sus estrellas, como quien encuentra su norte y ya no teme perderse.</p>
+        <p>Y cuando la noche polar se alargue, mi pinguinita, ven a mi lado: guardo para ti el sitio más cálido de mi pecho, junto a todos los sueños que todavía nos esperan.</p>
+        <p class="signature">Con todo mi amor,<br>siempre contigo ♥</p>
       </section>
       <div class="tiny">Hecha para ti, con todo mi cariño</div>
     </article>
