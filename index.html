@@ -16,7 +16,7 @@
     .card{position:relative;z-index:1;width:min(100%,720px);padding:clamp(32px,7vw,72px);background:rgba(251,254,255,.86);border:1px solid rgba(104,164,188,.3);border-radius:18px;box-shadow:0 24px 80px rgba(59,103,126,.15);text-align:center;backdrop-filter:blur(8px)}
     .eyebrow{font:600 11px/1.4 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.25em;color:var(--rose)}
     .ornament{margin:15px 0 10px;display:flex;justify-content:center;filter:drop-shadow(0 8px 10px rgba(60,98,119,.13))}
-    .penguin{width:96px;height:108px;overflow:visible}
+    .penguin-scene{display:block;width:min(100%,480px);height:auto;margin:10px auto 14px;filter:drop-shadow(0 12px 12px rgba(60,98,119,.1))}
     h1{font-size:clamp(38px,8vw,66px);line-height:1.03;font-weight:400;letter-spacing:-.04em;margin:0 0 18px}
     .subtitle{font-size:18px;color:var(--muted);font-style:italic;margin:0 auto 35px;max-width:460px;line-height:1.6}
     button{font:600 13px system-ui,sans-serif;letter-spacing:.04em;color:white;background:var(--deep);border:0;border-radius:999px;padding:15px 23px;cursor:pointer;box-shadow:0 8px 20px rgba(72,120,144,.2);transition:transform .2s,box-shadow .2s}
@@ -24,6 +24,9 @@
     button:focus-visible{outline:3px solid #eaa5b8;outline-offset:4px}
     .music-button{background:#e8f4f8;color:var(--deep);box-shadow:none}
     .music-button:hover{box-shadow:0 7px 16px rgba(72,120,144,.12)}
+    .song{max-width:440px;margin:24px auto 0;text-align:left}
+    .song-label{font:600 11px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 4px}
+    .song-frame{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:14px;box-shadow:0 8px 24px rgba(59,103,126,.14);background:#16212a}
     .letter{display:none;text-align:left;max-width:520px;margin:40px auto 0;padding-top:32px;border-top:1px solid #d8eaf0;animation:appear .7s ease both}
     .letter.open{display:block}
     .letter p{font-size:18px;line-height:1.85;margin:0 0 18px}
@@ -43,32 +46,39 @@
     <article class="card">
       <div class="eyebrow">Un mensaje desde nuestro rincón polar</div>
       <div class="ornament" aria-hidden="true">
-        <svg class="penguin" viewBox="0 0 100 112" role="img" aria-label="Un pingüinito adorable con bufanda rosa">
-          <ellipse cx="29" cy="65" rx="12" ry="27" fill="#294452" transform="rotate(18 29 65)"/>
-          <ellipse cx="71" cy="65" rx="12" ry="27" fill="#294452" transform="rotate(-18 71 65)"/>
-          <ellipse cx="50" cy="65" rx="31" ry="39" fill="#294452"/>
-          <ellipse cx="50" cy="70" rx="21" ry="28" fill="#f8fdff"/>
-          <ellipse cx="50" cy="36" rx="25" ry="25" fill="#294452"/>
-          <ellipse cx="41" cy="35" rx="5.5" ry="7" fill="#fff"/>
-          <ellipse cx="59" cy="35" rx="5.5" ry="7" fill="#fff"/>
-          <circle cx="42" cy="37" r="2.7" fill="#233843"/>
-          <circle cx="58" cy="37" r="2.7" fill="#233843"/>
-          <path d="M45 45 Q50 51 55 45 Q50 57 45 45" fill="#f4b34e"/>
-          <circle cx="34" cy="45" r="4" fill="#f3a1b6" opacity=".9"/>
-          <circle cx="66" cy="45" r="4" fill="#f3a1b6" opacity=".9"/>
-          <path d="M25 57 Q50 65 75 57 L73 66 Q50 74 27 66 Z" fill="#e98faa"/>
-          <path d="M67 65 L77 83 L67 86 L61 69 Z" fill="#e98faa"/>
-          <ellipse cx="38" cy="103" rx="10" ry="5" fill="#f4b34e"/>
-          <ellipse cx="62" cy="103" rx="10" ry="5" fill="#f4b34e"/>
-          <path d="M20 24 l3 -6 3 6 6 3 -6 3 -3 6 -3 -6 -6 -3z" fill="#fff" opacity=".95"/>
-          <path d="M80 39 l2 -4 2 4 4 2 -4 2 -2 4 -2 -4 -4 -2z" fill="#f5bfd0"/>
+        <svg class="penguin-scene" viewBox="0 0 480 290" role="img" aria-label="Dos pingüinitos enamorados se abrazan frente a un iglú">
+          <ellipse cx="240" cy="263" rx="224" ry="17" fill="#c9eaf2" opacity=".72"/>
+          <path d="M292 151a91 91 0 0 1 182 0v81H292z" fill="#f8fdff" stroke="#c6e8ef" stroke-width="7"/>
+          <path d="M292 177h182M338 72v157M428 72v157M299 132h168M298 205h174" fill="none" stroke="#b9e5ee" stroke-width="6"/>
+          <path d="M416 231v-39a30 30 0 0 1 60 0v39" fill="#83c5d2" stroke="#d5f0f4" stroke-width="7"/>
+          <path d="M20 237q48-23 95-6 46-30 91-4 44-26 91-2 60-30 163 9v39H20z" fill="#fff" opacity=".93"/>
+          <path d="M34 253q65-24 115-1m221-8q44-17 80 4" fill="none" stroke="#dceff4" stroke-width="9" stroke-linecap="round"/>
+          <g fill="#fff" opacity=".85"><path d="m97 48 4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/><path d="m388 30 3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><circle cx="331" cy="52" r="3"/><circle cx="58" cy="117" r="4"/></g>
+          <path d="M218 49c-13-20-43-8-38 15 3 15 22 27 38 39 16-12 35-24 38-39 5-23-25-35-38-15z" fill="#ef725f"/>
+          <g transform="translate(124 105) rotate(-9 76 78)">
+            <ellipse cx="30" cy="111" rx="17" ry="42" fill="#26303f" transform="rotate(31 30 111)"/><ellipse cx="76" cy="104" rx="49" ry="67" fill="#26303f"/><ellipse cx="81" cy="115" rx="31" ry="49" fill="#fbfdff"/><ellipse cx="75" cy="52" rx="39" ry="40" fill="#26303f"/>
+            <ellipse cx="65" cy="54" rx="8" ry="10" fill="#fff"/><ellipse cx="88" cy="52" rx="8" ry="10" fill="#fff"/><circle cx="68" cy="56" r="4" fill="#26303f"/><circle cx="90" cy="54" r="4" fill="#26303f"/>
+            <path d="M78 65q10-3 17 4-9 10-18 1z" fill="#f28b45"/><ellipse cx="54" cy="67" rx="6" ry="4" fill="#f6a1b4"/><ellipse cx="101" cy="64" rx="6" ry="4" fill="#f6a1b4"/>
+            <path d="M48 91q34 13 63-1l-3 13q-30 15-58 0z" fill="#73c4d1"/><path d="m93 101 16 7-6 25-13-4z" fill="#73c4d1"/><ellipse cx="56" cy="165" rx="18" ry="8" fill="#f28b45"/><ellipse cx="98" cy="164" rx="18" ry="8" fill="#f28b45"/>
+          </g>
+          <g transform="translate(218 99) rotate(8 76 78)">
+            <ellipse cx="30" cy="111" rx="17" ry="42" fill="#26303f" transform="rotate(31 30 111)"/><ellipse cx="76" cy="104" rx="49" ry="67" fill="#26303f"/><ellipse cx="71" cy="115" rx="31" ry="49" fill="#fbfdff"/><ellipse cx="75" cy="52" rx="39" ry="40" fill="#26303f"/>
+            <ellipse cx="64" cy="52" rx="8" ry="10" fill="#fff"/><ellipse cx="87" cy="54" rx="8" ry="10" fill="#fff"/><path d="M61 53q3-6 7 0" fill="none" stroke="#26303f" stroke-width="3" stroke-linecap="round"/><circle cx="89" cy="56" r="4" fill="#26303f"/>
+            <path d="M52 65q-10-3-17 4 9 10 18 1z" fill="#f28b45"/><ellipse cx="48" cy="64" rx="6" ry="4" fill="#f6a1b4"/><ellipse cx="99" cy="67" rx="6" ry="4" fill="#f6a1b4"/>
+            <path d="M47 92q34 13 63-1l-3 13q-30 15-58 0z" fill="#e98faa"/><path d="m91 101 16 7-6 25-13-4z" fill="#e98faa"/><ellipse cx="56" cy="165" rx="18" ry="8" fill="#f28b45"/><ellipse cx="98" cy="164" rx="18" ry="8" fill="#f28b45"/>
+          </g>
+          <path d="M220 136q-34 22-43 47m100-44q27 10 34 30" fill="none" stroke="#26303f" stroke-width="15" stroke-linecap="round"/>
+          <path d="M227 122c-7-10-22-3-20 8 2 8 12 14 20 20 8-6 18-12 20-20 2-11-13-18-20-8z" fill="#ef725f"/>
         </svg>
       </div>
       <h1>Para ti,<br>mi punguinita</h1>
       <p class="subtitle">Mi pequeño rincón cálido en medio del invierno.</p>
       <div class="actions">
         <button id="open" type="button" aria-expanded="false" aria-controls="letter">Abrir mi carta <span aria-hidden="true">♡</span></button>
-        <button class="music-button" id="music" type="button" aria-pressed="false">♫ Reproducir música</button>
+      </div>
+      <div class="song">
+        <p class="song-label">Nuestra canción · LATIN MAFIA</p>
+        <iframe class="song-frame" src="https://www.youtube-nocookie.com/embed/j3POFK8nR5w?rel=0" title="Te Estoy Correteando — LATIN MAFIA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
       </div>
       <section class="letter" id="letter" aria-label="Carta de amor">
         <p class="salute">Erika, mi pinguinita querida:</p>
@@ -85,44 +95,6 @@
   <script>
     const button = document.querySelector('#open');
     const letter = document.querySelector('#letter');
-    const musicButton = document.querySelector('#music');
-    let audioContext;
-    let musicTimer;
-    let noteIndex = 0;
-    const melody = [523.25, 659.25, 783.99, 659.25, 587.33, 698.46, 880, 698.46, 523.25, 587.33, 659.25, 523.25, 392, 493.88, 587.33, 493.88];
-
-    function playNote() {
-      if (!audioContext || audioContext.state !== 'running') return;
-      const oscillator = audioContext.createOscillator();
-      const volume = audioContext.createGain();
-      const now = audioContext.currentTime;
-      oscillator.type = 'sine';
-      oscillator.frequency.value = melody[noteIndex % melody.length];
-      volume.gain.setValueAtTime(0.0001, now);
-      volume.gain.exponentialRampToValueAtTime(0.035, now + 0.04);
-      volume.gain.exponentialRampToValueAtTime(0.0001, now + 0.52);
-      oscillator.connect(volume);
-      volume.connect(audioContext.destination);
-      oscillator.start(now);
-      oscillator.stop(now + 0.54);
-      noteIndex++;
-      musicTimer = setTimeout(playNote, 430);
-    }
-
-    musicButton.addEventListener('click', async () => {
-      if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      if (audioContext.state === 'suspended') await audioContext.resume();
-      if (musicButton.getAttribute('aria-pressed') === 'true') {
-        clearTimeout(musicTimer);
-        await audioContext.suspend();
-        musicButton.setAttribute('aria-pressed', 'false');
-        musicButton.textContent = '♫ Reproducir música';
-      } else {
-        musicButton.setAttribute('aria-pressed', 'true');
-        musicButton.textContent = '♫ Pausar música';
-        playNote();
-      }
-    });
     button.addEventListener('click', () => {
       const isOpen = letter.classList.toggle('open');
       button.setAttribute('aria-expanded', String(isOpen));
