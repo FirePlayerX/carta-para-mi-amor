@@ -7,22 +7,28 @@
   <meta name="description" content="Una carta polar, tierna y llena de amor para Erika.">
   <title>Para Erika, mi pinguinita</title>
   <style>
-    :root{--ink:#493d3a;--rose:#c97986;--deep:#816271;--paper:#fffaf1;--muted:#8b7772}
+    :root{--ink:#493d3a;--rose:#c97986;--deep:#816271;--paper:#fffaf1;--muted:#8b7772;--ice:#d9edf0;--gold:#c8a878}
     *{box-sizing:border-box}
     body{margin:0;min-height:100vh;color:var(--ink);font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at 12% 8%,rgba(249,210,213,.55) 0,transparent 32%),radial-gradient(ellipse at 88% 10%,rgba(246,225,196,.58) 0,transparent 34%),radial-gradient(ellipse at 50% 100%,#f3e9dc 0,transparent 56%),linear-gradient(180deg,#fff8f0,#f9f1e8 72%);overflow-x:hidden}
     body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.48;background-image:radial-gradient(2px 2px at 25px 30px,#fff 98%,transparent),radial-gradient(2px 2px at 95px 85px,#fff 98%,transparent),radial-gradient(1.5px 1.5px at 60px 120px,#fff 98%,transparent);background-size:150px 160px;z-index:0}
     .wrap{min-height:100vh;display:grid;place-items:center;padding:48px 20px;position:relative}
     .glow{position:fixed;width:370px;height:370px;border-radius:50%;filter:blur(76px);opacity:.34;pointer-events:none;background:#a8e4dc;top:-190px;right:8%}
-    .card{position:relative;z-index:1;width:min(100%,720px);padding:clamp(38px,7vw,72px);background:linear-gradient(145deg,rgba(255,253,247,.98),rgba(255,248,237,.97));border:1px solid #e3cdb2;border-radius:8px;box-shadow:0 24px 80px rgba(111,78,61,.17);text-align:center}
+    .card{position:relative;z-index:1;width:min(100%,720px);padding:clamp(42px,7vw,76px);background:linear-gradient(145deg,rgba(255,253,247,.99),rgba(255,248,237,.98));border:1px solid #e3cdb2;border-radius:8px;box-shadow:0 24px 80px rgba(111,78,61,.17),0 4px 12px rgba(111,78,61,.08);text-align:center}
     .card::before{content:"";position:absolute;inset:14px;border:1px solid rgba(188,147,114,.48);border-radius:4px;pointer-events:none}
     .card::after{content:"♡   ✦   ♡";position:absolute;bottom:18px;left:50%;transform:translateX(-50%);padding:0 14px;background:#fffaf1;color:#c78b87;font:16px Georgia,serif;letter-spacing:.3em}
-    .eyebrow{font:600 11px/1.4 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.25em;color:var(--rose)}
+    .letter-seal{width:48px;height:48px;margin:0 auto 13px;display:grid;place-items:center;border:1px solid #dcb4a1;border-radius:50%;background:radial-gradient(circle,#fffdf9 52%,#f5e3d8 54%,#fffaf1 72%);color:var(--deep);font:italic 13px Georgia,serif;box-shadow:0 3px 9px rgba(111,78,61,.1);position:relative;z-index:1}
+    .letter-seal span{color:var(--rose);font-size:12px}
+    .eyebrow{font:600 10px/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.24em;color:var(--rose);position:relative;z-index:1}
+    .letter-meta{display:flex;align-items:center;justify-content:center;gap:12px;margin:13px 0 0;color:#a2897c;font:600 9px/1.5 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;position:relative;z-index:1}
+    .letter-meta span:nth-child(2){color:var(--rose);font-size:12px}
     .photo-pair{display:flex;justify-content:center;align-items:flex-start;gap:clamp(14px,4vw,28px);margin:20px auto 30px;position:relative;z-index:1}
-    .photo-frame{width:clamp(132px,30vw,198px);margin:0;padding:9px 9px 15px;background:#fffdf9;border:1px solid #eadcc9;box-shadow:0 10px 24px rgba(91,64,53,.16)}
+    .photo-frame{width:clamp(132px,30vw,198px);margin:0;padding:9px 9px 15px;background:#fffdf9;border:1px solid #eadcc9;box-shadow:0 10px 24px rgba(91,64,53,.16);transition:transform .25s,box-shadow .25s;position:relative}
     .photo-frame:first-child{transform:rotate(-3deg)}
     .photo-frame:last-child{transform:rotate(3deg)}
+    .photo-frame:first-child:hover{transform:rotate(-1deg) translateY(-4px);box-shadow:0 16px 30px rgba(91,64,53,.2)}
+    .photo-frame:last-child:hover{transform:rotate(1deg) translateY(-4px);box-shadow:0 16px 30px rgba(91,64,53,.2)}
     .photo-frame img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border:1px solid rgba(115,88,76,.1)}
-    .photo-frame figcaption{margin-top:8px;color:#8a6f68;font:italic 14px Georgia,serif}
+    .photo-frame figcaption{margin-top:8px;color:#8a6f68;font:italic 13px/1.3 Georgia,serif;min-height:2.6em}
     h1{font-size:clamp(38px,8vw,66px);line-height:1.03;font-weight:400;letter-spacing:-.04em;margin:0 0 18px}
     .subtitle{font-size:18px;color:var(--muted);font-style:italic;margin:0 auto 35px;max-width:460px;line-height:1.6}
     .actions{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}
@@ -33,7 +39,8 @@
     .song-label{font:600 11px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px 4px}
     .song-audio{display:block;width:100%;height:54px;border-radius:14px;box-shadow:0 8px 24px rgba(111,78,61,.12)}
     .song-hint{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin:8px 0 0}
-    .letter{display:none;text-align:left;max-width:520px;margin:40px auto 0;padding-top:32px;border-top:1px solid #ead8c3;animation:appear .7s ease both}
+    .letter{display:none;text-align:left;max-width:520px;margin:40px auto 0;padding:32px 4px 0;border-top:1px solid #ead8c3;animation:appear .7s ease both;position:relative}
+    .letter::before{content:"❦";position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:0 12px;background:var(--paper);color:#c78b87;font-size:17px}
     .letter.open{display:block}
     .letter p{font-size:18px;line-height:1.85;margin:0 0 18px}
     .letter .salute{color:var(--deep);font-size:22px;font-style:italic}
@@ -42,7 +49,7 @@
     .heart{position:fixed;bottom:-30px;color:#d47c8a;pointer-events:none;animation:float 6s linear forwards;z-index:2}
     @keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
     @keyframes float{to{transform:translateY(-110vh) rotate(18deg);opacity:0}}
-    @media(max-width:520px){.wrap{padding:22px 14px}.card{padding:40px 24px}.letter p{font-size:17px}.subtitle{font-size:16px}.actions{flex-direction:column}.actions button{width:100%}}
+    @media(max-width:520px){.wrap{padding:22px 14px}.card{padding:40px 24px}.letter p{font-size:17px}.subtitle{font-size:16px}.actions{flex-direction:column}.actions button{width:100%}.photo-pair{gap:12px}.photo-frame{padding:7px 7px 13px}.photo-frame figcaption{font-size:11px}.letter-meta{font-size:8px;gap:8px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
@@ -50,19 +57,21 @@
   <div class="glow" aria-hidden="true"></div>
   <main class="wrap">
     <article class="card">
+      <div class="letter-seal" aria-label="José Ángel y Erika">J <span>♥</span> E</div>
       <div class="eyebrow">Un mensaje desde nuestro rincón polar</div>
-      <div class="photo-pair" aria-label="Fotos de Erika y su persona favorita">
+      <div class="letter-meta"><span>José Ángel</span><span aria-hidden="true">♡</span><span>Erika</span></div>
+      <div class="photo-pair" aria-label="Fotos de Erika y José Ángel">
         <figure class="photo-frame">
           <img src="assets/erika.png" alt="Retrato de Erika" loading="lazy">
-          <figcaption>Erika ♡</figcaption>
+          <figcaption>Mi persona favorita · Erika ♡</figcaption>
         </figure>
         <figure class="photo-frame">
-          <img src="assets/mi-amor.jpg" alt="Retrato de su persona favorita" loading="lazy">
-          <figcaption>Mi persona favorita</figcaption>
+          <img src="assets/mi-amor.jpg" alt="Retrato de José Ángel, novio de Erika" loading="lazy">
+          <figcaption>José Ángel · su novio ♡</figcaption>
         </figure>
       </div>
       <h1>Para ti,<br>mi punguinita</h1>
-      <p class="subtitle">Mi pequeño rincón cálido en medio del invierno.</p>
+      <p class="subtitle">La persona que vuelve tibio hasta mi invierno.</p>
       <div class="actions">
         <button id="open" type="button" aria-expanded="false" aria-controls="letter">Abrir mi carta <span aria-hidden="true">♡</span></button>
       </div>
@@ -78,7 +87,7 @@
         <p>Tu mirada enciende auroras donde antes solo había cielo oscuro. Tu voz vuelve tibia la tarde; tu mano, mi lugar favorito; tu amor, el hogar que llevaría conmigo hasta el último rincón del mundo.</p>
         <p>Quiero quererte en lo sencillo y en lo inmenso: como el mar abraza la orilla, como la noche cuida sus estrellas, como quien encuentra su norte y ya no teme perderse.</p>
         <p>Y cuando la noche polar se alargue, mi pinguinita, ven a mi lado: guardo para ti el sitio más cálido de mi pecho, junto a todos los sueños que todavía nos esperan.</p>
-        <p class="signature">Con todo mi amor,<br>siempre contigo ♥</p>
+        <p class="signature">Con todo mi amor,<br>José Ángel, tu novio ♥</p>
       </section>
       <div class="tiny">Hecha para ti, con todo mi cariño</div>
     </article>
